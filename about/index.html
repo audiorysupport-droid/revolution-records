@@ -32,7 +32,7 @@
         .about-hero h1 { font-size: 48px; margin: 0; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; }
 
         /* About Content Grid Layout */
-        .about-section { padding: 80px 100px; }
+        .about-section { padding: 60px 100px; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         
         .about-text h2 { font-size: 28px; font-weight: 800; letter-spacing: 3px; margin-top: 0; margin-bottom: 25px; text-transform: uppercase; color: var(--accent); }
@@ -40,6 +40,18 @@
         
         .about-image { width: 100%; border-radius: 4px; overflow: hidden; background: var(--dark-card); }
         .about-image img { width: 100%; height: auto; display: block; filter: grayscale(20%); }
+
+        /* Team Section Layout */
+        .team-section { padding: 40px 100px 80px 100px; border-top: 1px solid #221a29; }
+        .team-section h2 { font-size: 28px; font-weight: 800; letter-spacing: 4px; margin-top: 0; margin-bottom: 35px; text-transform: uppercase; }
+        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+        .team-card { background: var(--dark-card); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+        .team-img-container { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+        .team-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .team-info { padding: 20px; text-align: left; }
+        .team-name { font-weight: bold; font-size: 16px; letter-spacing: 0.5px; margin-bottom: 5px; }
+        .team-role { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 
         /* Footer & Newsletter */
         footer { padding: 80px 100px 40px 100px; border-top: 1px solid #1a1520; background: #0a060c; text-align: center; }
@@ -54,8 +66,9 @@
         @media (max-width: 1024px) {
             header { padding: 20px; }
             .about-hero { padding: 0 40px; }
-            .about-section, footer { padding: 40px; }
+            .about-section, .team-section, footer { padding: 40px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .sidebar { display: none; }
         }
 
@@ -103,27 +116,57 @@
 
     <div class="sidebar">++ DEVELOPING TALENTS SINCE 2023</div>
 
-    <!-- About Page Header Banner -->
     <section class="about-hero">
         <h1>ABOUT US</h1>
     </section>
 
-    <!-- Main About Description Block -->
     <section class="about-section">
         <div class="about-grid">
             <div class="about-text">
                 <h2>Revolution Records</h2>
-                <p>Founded on a commitment to boundary-breaking artistry and exceptional sound design, Revolution Records has been an active anchor for forward-thinking talent. We focus heavily on cultivation, offering independent creators an ecosystem to refine their craft and reach global listeners without compromised visions.</p>
+                <p>The label was found by Ycmb Chuma and Kion. Founded on a commitment to boundary-breaking artistry and exceptional sound design, Revolution Records has been an active anchor for forward-thinking talent. We focus heavily on cultivation, offering independent creators an ecosystem to refine their craft and reach global listeners without compromised visions.</p>
                 <p>Our team works collectively across music publishing, record distribution, and visual media production to maintain high-quality aesthetic output. We believe inside every raw piece of art lies a story waiting to shift culture completely.</p>
             </div>
             <div class="about-image">
-                <!-- Replace with your about label photo, studio image, or team branding shot -->
                 <img src="../assets/about-studio.webp" alt="Revolution Records Studio Workspace" onerror="this.src='../chuma.webp'">
             </div>
         </div>
     </section>
 
-    <!-- Footer Area matching primary pages -->
+    <section class="team-section">
+        <h2>OUR TEAM</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img-container"><img src="../chuma.webp" alt="Ycmb Chuma"></div>
+                <div class="team-info">
+                    <div class="team-name">Ycmb Chuma</div>
+                    <div class="team-role">Co-Founder / Producer</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-container"><img src="../kion.webp" alt="Kion"></div>
+                <div class="team-info">
+                    <div class="team-name">Kion</div>
+                    <div class="team-role">Co-Founder / Artist</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-container"><img src="../chuma.webp" alt="Team Member"></div>
+                <div class="team-info">
+                    <div class="team-name">Marcus Vance</div>
+                    <div class="team-role">A&R Direction</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img-container"><img src="../kion.webp" alt="Team Member"></div>
+                <div class="team-info">
+                    <div class="team-name">Elena Rostova</div>
+                    <div class="team-role">Management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="newsletter">
             <h3>Newsletter</h3>
@@ -137,7 +180,6 @@
         </div>
     </footer>
 
-    <!-- Interactive Navigation Scripts -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navbar = document.getElementById('navbar');
