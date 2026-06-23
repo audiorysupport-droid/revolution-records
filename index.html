@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Revolution Records</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolution Records</title>
+    <style>
+        /* CSS: Dark Mode & Classic Theme */
+        :root { --bg: #0f0a12; --accent: #d4af37; --text: #ffffff; }
+        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; }
+        
+        nav { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
+        .nav-menu { display: flex; list-style: none; }
+        .nav-menu li { margin: 0 15px; }
+        
+        /* Hamburger for mobile */
+        .hamburger { display: none; cursor: pointer; }
+        .bar { display: block; width: 25px; height: 3px; background: var(--accent); margin: 5px; }
 
-<link rel="stylesheet" href="css/admin.css">
-
-<style>
-  body { visibility: hidden; }
-</style>
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; width: 100%; background: #222; }
+            .nav-menu.active { display: flex; }
+        }
+    </style>
 </head>
-
 <body>
+    <nav>
+        <div class="logo">RR</div>
+        <ul class="nav-menu">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/artists">ARTISTS</a></li>
+            <li><a href="/demo">DEMO</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </nav>
 
-<header class="topbar">
-  <h1>Revolution Records</h1>
-</header>
+    <script>
+        /* JavaScript: Hamburger Toggle */
+        function toggleMenu() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
