@@ -5,55 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolution Records</title>
     <style>
-        :root { --bg: #0f0a12; --accent: #8e44ad; --gold: #d4af37; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Helvetica', sans-serif; margin: 0; }
-        
-        /* Navigation Bar */
-        nav { display: flex; align-items: center; padding: 20px 40px; }
-        .logo-box { background: var(--accent); padding: 15px; margin-right: 30px; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { color: white; text-decoration: none; font-size: 12px; letter-spacing: 1px; }
-        .socials { margin-left: auto; display: flex; gap: 15px; }
-        .shop-btn { background: var(--accent); padding: 10px 20px; color: white; border: none; margin-left: 20px; cursor: pointer; }
+        :root { --bg: #0f0a12; --accent: #8e44ad; --text: #ffffff; --grey: #555; }
+        body { background: var(--bg); color: var(--text); font-family: 'Helvetica', sans-serif; margin: 0; }
+        a { text-decoration: none; color: white; }
 
-        /* Left Side Text */
-        .sidebar-text { position: absolute; left: 20px; top: 50%; transform: rotate(-90deg); color: #666; font-size: 10px; }
+        /* Header */
+        header { display: flex; align-items: center; padding: 20px 40px; border-bottom: 1px solid #222; }
+        .logo { background: var(--accent); padding: 10px 15px; font-weight: bold; }
+        nav { display: flex; gap: 30px; margin-left: 40px; font-size: 12px; }
+        .nav-right { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+        .submit-btn { background: var(--accent); padding: 10px 20px; border: none; color: white; cursor: pointer; }
+
+        /* Sidebar */
+        .sidebar { position: fixed; left: 20px; top: 40%; writing-mode: vertical-rl; transform: rotate(180deg); color: var(--grey); font-size: 10px; }
+
+        /* Hero */
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; padding-left: 100px; }
+
+        /* Sections & Grids */
+        section { padding: 40px 100px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        
+        .card { position: relative; background: #1a1a1a; }
+        .card img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+        .card-info { padding: 15px; }
+        .play-btn { position: absolute; top: 35%; left: 40%; width: 50px; background: rgba(0,0,0,0.5); color: white; border-radius: 50%; padding: 10px; cursor: pointer; }
 
         /* Footer */
-        footer { padding: 40px; text-align: center; border-top: 1px solid #333; margin-top: 50px; }
-        .copyright { color: #555; font-size: 12px; margin-top: 20px; }
+        footer { padding: 60px 100px; border-top: 1px solid #222; text-align: center; }
+        .newsletter input { padding: 10px; width: 250px; background: #222; border: 1px solid #333; color: white; }
+        .newsletter button { padding: 10px 20px; background: var(--accent); border: none; color: white; }
+        .footer-bottom { margin-top: 40px; color: var(--grey); font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo-box">RR</div>
-        <ul class="nav-links">
-            <li><a href="/artists">ARTISTS</a></li>
-            <li><a href="/releases">RELEASES</a></li>
-            <li><a href="/videos">VIDEOS</a></li>
-            <li><a href="/about">ABOUT</a></li>
-        </ul>
-        <div class="socials">
+    <header>
+        <div class="logo">RR</div>
+        <nav>
+            <a href="/artists">ARTISTS</a>
+            <a href="/releases">RELEASES</a>
+            <a href="/videos">VIDEOS</a>
+            <a href="/about">ABOUT</a>
+        </nav>
+        <div class="nav-right">
             <span>FB</span> <span>TW</span> <span>IG</span>
+            <button class="submit-btn" onclick="window.location.href='/demo'">SUBMIT DEMO</button>
         </div>
-        <button class="shop-btn">SHOP →</button>
-        <div style="margin-left: 20px; cursor: pointer;">MENU ☰</div>
-    </nav>
+    </header>
 
-    <div class="sidebar-text">++ DEVELOPING TALENTS SINCE 2007</div>
+    <div class="sidebar">++ DEVELOPING TALENTS SINCE 2023</div>
 
-    <main>
-        <!-- Content goes here -->
-    </main>
+    <section class="hero">
+        <h1>HENDIRCK LAMAR</h1>
+        <p>STREAM NOW ON ALL PLATFORMS</p>
+    </section>
+
+    <section>
+        <h2>ARTISTS <a href="/artists" style="color: var(--accent); font-size: 14px;">VIEW ALL →</a></h2>
+        <div class="grid">
+            <!-- Repeat 8 cards -->
+            <div class="card">
+                <img src="/assets/drake.webp" alt="Artist">
+                <div class="card-info"><a href="/artists/drake">Drake ↗</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>RELEASES</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="play-btn">▶</div>
+                <img src="/assets/dream.webp" alt="Cover">
+                <div class="card-info">Dream<br><small style="color:var(--grey)">by Drake</small></div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="newsletter">
             <h3>Newsletter</h3>
-            <input type="email" placeholder="Email">
+            <input type="email" placeholder="Email Address">
             <button>SIGN UP</button>
         </div>
-        <div class="copyright">
+        <div class="footer-bottom">
             2026 © REVOLUTION RECORDS
         </div>
     </footer>
