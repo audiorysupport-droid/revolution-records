@@ -5,43 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolution Records</title>
     <style>
-        /* CSS: Dark Mode & Classic Theme */
-        :root { --bg: #0f0a12; --accent: #d4af37; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; }
+        :root { --bg: #0f0a12; --accent: #8e44ad; --gold: #d4af37; --text: #ffffff; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Helvetica', sans-serif; margin: 0; }
         
-        nav { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
-        .nav-menu { display: flex; list-style: none; }
-        .nav-menu li { margin: 0 15px; }
-        
-        /* Hamburger for mobile */
-        .hamburger { display: none; cursor: pointer; }
-        .bar { display: block; width: 25px; height: 3px; background: var(--accent); margin: 5px; }
+        /* Navigation Bar */
+        nav { display: flex; align-items: center; padding: 20px 40px; }
+        .logo-box { background: var(--accent); padding: 15px; margin-right: 30px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+        .socials { margin-left: auto; display: flex; gap: 15px; }
+        .shop-btn { background: var(--accent); padding: 10px 20px; color: white; border: none; margin-left: 20px; cursor: pointer; }
 
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; width: 100%; background: #222; }
-            .nav-menu.active { display: flex; }
-        }
+        /* Left Side Text */
+        .sidebar-text { position: absolute; left: 20px; top: 50%; transform: rotate(-90deg); color: #666; font-size: 10px; }
+
+        /* Footer */
+        footer { padding: 40px; text-align: center; border-top: 1px solid #333; margin-top: 50px; }
+        .copyright { color: #555; font-size: 12px; margin-top: 20px; }
     </style>
 </head>
 <body>
+
     <nav>
-        <div class="logo">RR</div>
-        <ul class="nav-menu">
-            <li><a href="/">HOME</a></li>
+        <div class="logo-box">RR</div>
+        <ul class="nav-links">
             <li><a href="/artists">ARTISTS</a></li>
-            <li><a href="/demo">DEMO</a></li>
+            <li><a href="/releases">RELEASES</a></li>
+            <li><a href="/videos">VIDEOS</a></li>
+            <li><a href="/about">ABOUT</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <div class="socials">
+            <span>FB</span> <span>TW</span> <span>IG</span>
         </div>
+        <button class="shop-btn">SHOP →</button>
+        <div style="margin-left: 20px; cursor: pointer;">MENU ☰</div>
     </nav>
 
-    <script>
-        /* JavaScript: Hamburger Toggle */
-        function toggleMenu() {
-            document.querySelector(".nav-menu").classList.toggle("active");
-        }
-    </script>
+    <div class="sidebar-text">++ DEVELOPING TALENTS SINCE 2007</div>
+
+    <main>
+        <!-- Content goes here -->
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="Email">
+            <button>SIGN UP</button>
+        </div>
+        <div class="copyright">
+            2026 © REVOLUTION RECORDS
+        </div>
+    </footer>
+
 </body>
 </html>
