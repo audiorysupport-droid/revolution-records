@@ -38,12 +38,15 @@
         /* Classic Video Preview Cards */
         .video-card { background: var(--dark-card); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #1d1524; }
         
+        /* Hidden Class for View More Items */
+        .video-card.hidden { display: none; }
+        
         /* 16:9 Cinema Container Box */
         .video-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; cursor: pointer; overflow: hidden; }
         .video-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease, filter 0.5s ease; filter: grayscale(15%) brightness(90%); }
         .video-card:hover .video-wrapper img { transform: scale(1.03); filter: grayscale(0%) brightness(100%); }
         
-        /* Custom Classic Play Overlay (No YouTube Branding) */
+        /* Custom Classic Play Overlay */
         .custom-play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 10, 18, 0.4); display: flex; align-items: center; justify-content: center; transition: background 0.3s ease; }
         .play-circle { width: 64px; height: 64px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
         .play-circle svg { width: 22px; height: 22px; fill: white; margin-left: 4px; transition: transform 0.3s ease; }
@@ -59,6 +62,11 @@
         .video-info { padding: 25px; display: flex; flex-direction: column; gap: 5px; }
         .video-title { font-weight: bold; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase; }
         .video-artist { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Control Trigger Action styling */
+        .action-container { display: flex; justify-content: center; margin-top: 50px; }
+        .view-more-btn { background: none; border: 2px solid var(--accent); color: white; padding: 16px 40px; font-weight: bold; font-size: 13px; letter-spacing: 3px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; }
+        .view-more-btn:hover { background: var(--accent); box-shadow: 0 0 25px rgba(142, 68, 173, 0.4); }
 
         /* Footer & Newsletter */
         footer { padding: 80px 100px 40px 100px; border-top: 1px solid #1a1520; background: #0a060c; text-align: center; }
@@ -127,19 +135,16 @@
         <h1>VISUAL RELEASES</h1>
     </section>
 
-    <!-- 8 Item Classic Video Collection -->
+    <!-- Video Collection -->
     <section>
         <div class="grid">
             
             <!-- Video 1 -->
             <div class="video-card">
-                <!-- data-video contains ONLY the YouTube unique string ID -->
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../ya-habibty.webp" alt="Ya Habibty Cinematic Visual">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -153,9 +158,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../chuma.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -169,9 +172,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../ya-habibty.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -185,9 +186,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../chuma.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -201,9 +200,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../ya-habibty.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -217,9 +214,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../chuma.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -233,9 +228,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../ya-habibty.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -249,9 +242,7 @@
                 <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
                     <img src="../chuma.webp" alt="Video Preview">
                     <div class="custom-play-overlay">
-                        <div class="play-circle">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                     </div>
                 </div>
                 <div class="video-info">
@@ -260,6 +251,41 @@
                 </div>
             </div>
 
+            <!-- --- BONUS HIDDEN VIDEOS INITIALLY HIDDEN FROM THE PRIMARY GRID --- -->
+            
+            <!-- Video 9 -->
+            <div class="video-card hidden">
+                <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
+                    <img src="../ya-habibty.webp" alt="Video Preview">
+                    <div class="custom-play-overlay">
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Archive Cut: Session #09</div>
+                    <div class="video-artist">Ycmb Chuma</div>
+                </div>
+            </div>
+
+            <!-- Video 10 -->
+            <div class="video-card hidden">
+                <div class="video-wrapper" data-video="dQw4w9WgXcQ" onclick="playCinemaVideo(this)">
+                    <img src="../chuma.webp" alt="Video Preview">
+                    <div class="custom-play-overlay">
+                        <div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Sunset Beats Vol. 4</div>
+                    <div class="video-artist">Kion</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- View More Trigger Action Button Container -->
+        <div class="action-container">
+            <button class="view-more-btn" id="viewMoreTrigger">View More</button>
         </div>
     </section>
 
@@ -292,11 +318,21 @@
         // Dynamic clean video playback inject engine
         function playCinemaVideo(container) {
             const videoId = container.getAttribute('data-video');
-            // autoplay=1 builds instant play functionality seamlessly 
             const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&color=white`;
-            
             container.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
+
+        // View More Toggle Engine
+        const viewMoreTrigger = document.getElementById('viewMoreTrigger');
+        const hiddenVideoCards = document.querySelectorAll('.video-card.hidden');
+
+        viewMoreTrigger.addEventListener('click', () => {
+            hiddenVideoCards.forEach(card => {
+                card.classList.remove('hidden');
+            });
+            // Hide the trigger once all videos are exposed elegantly
+            viewMoreTrigger.style.display = 'none';
+        });
     </script>
 </body>
 </html>
